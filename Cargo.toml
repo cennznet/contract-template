@@ -1,0 +1,33 @@
+[package]
+name = "{{project-name}}"
+version = "0.1.0"
+authors = ["{{authors}}"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+contract-sdk = { git = "ssh://git@bitbucket.org/centralitydev/contract-sdk.git" }
+ink_core = { git = "https://github.com/paritytech/ink.git" }
+ink_lang = { git = "https://github.com/paritytech/ink.git", features = ["generate-api-description"] }
+ink_model = { git = "https://github.com/paritytech/ink.git" }
+parity-codec = { version = "3.2", default-features = false, features = ["derive"] }
+
+[features]
+default = [
+	"ink_lang/generate-api-description"
+]
+test-env = [
+	"ink_core/test-env",
+	"ink_lang/test-env",
+	"ink_model/test-env",
+]
+generate-api-description = [
+	"ink_lang/generate-api-description"
+]
+
+[profile.release]
+panic = "abort"
+lto = true
+opt-level = "z"
