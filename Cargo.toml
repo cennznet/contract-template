@@ -8,10 +8,10 @@ edition = "2018"
 crate-type = ["cdylib"]
 
 [dependencies]
-contract-sdk = { git = "ssh://git@bitbucket.org/centralitydev/contract-sdk.git" }
-ink_core = { git = "https://github.com/paritytech/ink.git" }
-ink_lang = { git = "https://github.com/paritytech/ink.git", features = ["generate-api-description"] }
-ink_model = { git = "https://github.com/paritytech/ink.git" }
+contract-sdk = { git = "https://github.com/cennznet/contract-sdk.git" }
+ink_core = { git = "https://github.com/paritytech/ink.git", rev = "1748b51ad8364d71bbd18b67db587bb694fb1aef" }
+ink_lang = { git = "https://github.com/paritytech/ink.git", features = ["generate-api-description"], rev = "1748b51ad8364d71bbd18b67db587bb694fb1aef" }
+ink_model = { git = "https://github.com/paritytech/ink.git", rev = "1748b51ad8364d71bbd18b67db587bb694fb1aef" }
 parity-codec = { version = "3.2", default-features = false, features = ["derive"] }
 
 [features]
