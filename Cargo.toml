@@ -5,26 +5,22 @@ authors = ["{{authors}}"]
 edition = "2018"
 
 [lib]
+name = "{{project-name}}"
 crate-type = ["cdylib"]
 
 [dependencies]
-contract-sdk = { git = "https://github.com/cennznet/contract-sdk.git" }
-ink_core = { git = "https://github.com/paritytech/ink.git", rev = "1748b51ad8364d71bbd18b67db587bb694fb1aef" }
-ink_lang = { git = "https://github.com/paritytech/ink.git", features = ["generate-api-description"], rev = "1748b51ad8364d71bbd18b67db587bb694fb1aef" }
-ink_model = { git = "https://github.com/paritytech/ink.git", rev = "1748b51ad8364d71bbd18b67db587bb694fb1aef" }
-parity-codec = { version = "3.2", default-features = false, features = ["derive"] }
+contract-sdk = { git = "https://github.com/cennznet/contract-sdk.git", version = "0.1.2", default-features = false }
+parity-codec = { version = "~4", default-features = false, features = ["derive"] }
 
 [features]
 default = [
-	"ink_lang/generate-api-description"
+	"generate-api-description"
 ]
 test-env = [
-	"ink_core/test-env",
-	"ink_lang/test-env",
-	"ink_model/test-env",
+  "contract-sdk/test-env"
 ]
 generate-api-description = [
-	"ink_lang/generate-api-description"
+	"contract-sdk/generate-api-description"
 ]
 
 [profile.release]
