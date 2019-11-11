@@ -1,7 +1,10 @@
 #![no_std]
-use ink_lang::contract;
+use contract_sdk::{
+    ink_lang::contract
+};
 
 contract! {
+  #![env = DefaultSrmlTypes]
   // Define contract data
   struct Demo {}
 

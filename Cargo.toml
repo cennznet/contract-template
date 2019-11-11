@@ -5,11 +5,12 @@ authors = ["{{authors}}"]
 edition = "2018"
 
 [lib]
+name = "{{project-name}}"
 crate-type = ["cdylib"]
 
 [dependencies]
-contract-sdk = { git = "https://github.com/cennznet/contract-sdk.git", vesrion = "0.1.2" }
-parity-codec = { version = "3.5.4", default-features = false, features = ["derive"] }
+contract-sdk = { git = "https://github.com/cennznet/contract-sdk.git", version = "0.1.2", default-features = false }
+parity-codec = { version = "~4", default-features = false, features = ["derive"] }
 
 [features]
 default = [
