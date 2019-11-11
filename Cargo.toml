@@ -17,7 +17,7 @@ default = [
 	"generate-api-description"
 ]
 test-env = [
-  "contract-sdk/test-env"
+	"contract-sdk/test-env",
 ]
 generate-api-description = [
 	"contract-sdk/generate-api-description"
